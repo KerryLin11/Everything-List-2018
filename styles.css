@@ -1,0 +1,41 @@
+.filter-button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/*?  'Type' class colours */
+.movie { background-color: #ffc107; }
+.anime { background-color: #4caf50; }
+.manga { background-color: #ff5722; }
+.game { background-color: #2196f3; }
+.book { background-color: #9c27b0; }
+.short-film { background-color: #607d8b; }
+.documentary { background-color: #795548; }
+.tv-show { background-color: #ffeb3b; }
