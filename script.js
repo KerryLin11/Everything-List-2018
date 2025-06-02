@@ -104,29 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 row.forEach((cell, cellIndex) => {
                     const td = document.createElement('td');
-
-                    if (cellIndex === 4) {
-                        td.classList.add('notes-cell');
-                        const fullText = cell;
-                        const maxLength = 100; //!! Adjust the maximum length as needed 
-
-                        if (fullText.length > maxLength) {
-                            td.textContent = fullText.substring(0, maxLength) + '...';
-                            const readMoreButton = document.createElement('button');
-                            readMoreButton.textContent = 'Read More';
-                            readMoreButton.classList.add('read-more-button');
-                            readMoreButton.addEventListener('click', function () {
-                                td.textContent = fullText;
-                                td.classList.add('expanded');
-                                readMoreButton.style.display = 'none';
-                            });
-                            td.appendChild(readMoreButton);
-                        } else {
-                            td.textContent = fullText;
-                        }
-                    } else {
-                        td.textContent = cell;
-                    }
+                    td.textContent = cell;
 
                     // Assign different colors based on 'type'
                     if (cellIndex === 1) { // Type is in the second column (index = 1)
