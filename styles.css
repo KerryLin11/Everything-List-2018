@@ -1,41 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Sticky the header */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#filter-buttons {
+    position: sticky;
+    top: 50px;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .filter-button {
-    margin-right: 10px;
-    padding: 8px 12px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-
-    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
 }
 
 .filter-button:hover {
     background-color: #0056b3;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+#data-container {
+    padding: 20px;
+    margin-top: 20px;
+    /* Space below sticky filter buttons */
 }
 
-th, td {
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+th,
+td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
 }
 
 th {
     background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
 
 /*?  'Type' class colours */
-.movie { background-color: #ffc107; }
-.anime { background-color: #4caf50; }
-.manga { background-color: #ff5722; }
-.game { background-color: #2196f3; }
-.book { background-color: #9c27b0; }
-.short-film { background-color: #607d8b; }
-.documentary { background-color: #795548; }
-.tv-show { background-color: #ffeb3b; }
+.movie {
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* Yellow */
+.anime {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Green */
+.manga {
+    background-color: #ff5722;
+    color: white;
+}
+
+/* Orange */
+.game {
+    background-color: #2196f3;
+    color: white;
+}
+
+/* Blue */
+.book {
+    background-color: #9c27b0;
+    color: white;
+}
+
+/* Purple */
+.short-film {
+    background-color: #607d8b;
+    color: white;
+}
+
+/* Grey-blue */
+.documentary {
+    background-color: #795548;
+    color: white;
+}
+
+/* Brown */
+.tv-show {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+/* Light Yellow */
