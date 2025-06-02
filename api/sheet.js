@@ -1,25 +1,26 @@
-// api/sheets.js
+import { config } from 'dotenv';
+config();
 
-export default async function handler(request, response) {
-    const apiKey = process.env.GSHEETS_API_KEY;
-    const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Master List!A:E'; // Or pass this as a query param if you want flexibility
+export default async function handler(req, res) {
+    const apiKey = process.env.GOOGLE_SHEETS_API_KEY;
+    const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
+    const { range } = req.query;
 
-    if (!apiKey || !spreadsheetId) {
-        response.status(500).json({ error: 'Missing environment variables' });
-        return;
+    if (!range) {
+        return res.status(400).json({ error: 'Missing range parameter' });
     }
 
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(range)}?key=${apiKey}`;
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
     try {
-        const fetchResponse = await fetch(url);
-        if (!fetchResponse.ok) {
-            throw new Error('Failed to fetch data from Google Sheets');
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Google Sheets API error: ${response.statusText}`);
         }
-        const data = await fetchResponse.json();
-        response.status(200).json(data);
+        const data = await response.json();
+        res.status(200).json(data);
     } catch (error) {
-        response.status(500).json({ error: error.message });
+        console.error('Error fetching data from Google Sheets:', error);
+        res.status(500).json({ error: 'Failed to fetch data from Google Sheets' });
     }
 }
