@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchSublistData() {
         fetchSheetData(favouriteSongsRange)
             .then(data => {
-                console.log(data);
+                // console.log(data);
             })
             .catch(error => {
                 // Handle error
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchMusicData() {
         fetchSheetData(influentialMusicRange)
             .then(data => {
-                console.log(data);
+                // console.log(data);
             })
             .catch(error => {
                 // Handle error
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchListData() {
         fetchSheetData(masterListRange)
             .then(data => {
+                console.log(data);
                 originalValues = data.values;
 
                 const filterButtonsContainer = document.getElementById('filter-buttons');
@@ -91,6 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create the subheading row (first row)
             const subheadingRow = document.createElement('tr');
             values[0].forEach((cell, cellIndex) => {
+                console.log(cellIndex + ' ' + cell);
+
+
+
                 const th = document.createElement('th');
                 th.textContent = cell;
                 subheadingRow.appendChild(th);
