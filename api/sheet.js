@@ -3,7 +3,7 @@
 export default async function handler(request, response) {
     const apiKey = process.env.GSHEETS_API_KEY;
     const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Master List!A:E'; // Or pass this as a query param if you want flexibility
+    const range = 'Master List!A:F'; // Param querying already built into sheet logic. No need for flexibility, hardcoded range for nwo
 
     if (!apiKey || !spreadsheetId) {
         response.status(500).json({ error: 'Missing environment variables' });
