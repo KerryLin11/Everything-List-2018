@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    const masterListRange = 'Master List!A:E';
+    const masterListRange = 'Master List!A:F';
     const favouriteSongsRange = 'Favourite Songs SubList ~2023!A:M';
     const influentialMusicRange = '10 Most Influential Music Pieces!A:B';
 
